@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:image" content="/assets/dec_red_background.png">
+    <title>Drone Expo Canada</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html[lang]:not([lang="en"]) *[lang="en"] {
+            display: none !important;
+        }
+
+        html[lang]:not([lang="fr"]) *[lang="fr"] {
+            display: none !important;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            --dfq-red: hsl(359, 62%, 39%);
+            --dfq-red-l1: hsl(10, 72%, 49%);
+            --dfq-red-l3: hsl(3, 82%, 63%);
+            --dfq-red-l3_5: hsl(3, 85%, 78%);
+            --dfq-red-l4: hsl(0, 90%, 94%);
+            --dfq-red-l5: hsl(0, 90%, 98%);
+            --dfq-blue-d5: #2c3e50;
+        }
+
+        body {
+            font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            color: white;
+            background: var(--dfq-blue-d5);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+            gap: 0 0.75rem;
+        }
+
+        .logo-container-container {
+            position: relative;
+            height: 0;
+            width: 0;
+        }
+
+        .logo-container {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            top: -35px;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+        }
+
+        .logo::after {
+            content: "";
+            width: 120%;
+            height: 120%;
+            position: absolute;
+            top: -15%;
+            left: -10%;
+            border-radius: 50%;
+            background: var(--dfq-blue-d5);
+            background-image: url("/assets/dec_white_logo.png");
+            background-size: 100px 100px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .logo::before {
+            content: "";
+            width: 130%;
+            height: 130%;
+            position: absolute;
+            top: -20%;
+            left: -15%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .logo {
+            position: relative;
+            aspect-ratio: 1;
+            width: 100px;
+            margin: auto;
+            margin-top: 15px;
+        }
+
+        .logo::before {
+            content: "";
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--dfq-red-l3);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+            background: url("/Festival_Drone_header.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .detail-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--dfq-red-l1), var(--dfq-red-l3));
+            color: white;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin: -50px 0 0 0;
+            border-radius: 30px 30px 0 0;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            padding: 2rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: var(--dfq-red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subsection-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dfq-red);
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .program-card {
+            background: var(--dfq-red-l5);
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--dfq-red-l3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card h3 {
+            color: var(--dfq-red-l1);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .drone-models {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .drone-model {
+            background: var(--dfq-red-l3);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .drone-model:hover {
+            transform: scale(1.05);
+        }
+
+        .drone-model-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-size: contain;
+            background-position: center;
+            background-color: white;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+        }
+
+
+        .conferences {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .conference {
+            position: relative;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--dfq-red-l3);
+            border-left: 6px solid var(--dfq-red-l3);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            min-height: 6rem;
+        }
+
+        .conference h4, .conference ul {
+            position: relative;
+            z-index: 1;
+        }
+
+        .conference i {
+            position: absolute;
+            color: var(--dfq-red-l5);
+            font-size: 6rem;
+            transform: rotate(-30deg);
+            top: 2rem;
+            right: 2rem;
+        }
+
+        .conference ul {
+            padding-left: 2.5rem;
+        }
+
+        .conference ul li::marker {
+            color: var(--dfq-red-l3);
+        }
+
+        .conference-presenter {
+            color: var(--dfq-red);
+            padding-top: 0.5rem;
+        }
+
+        .conference-animator {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 10px;
+            border-top: 6px solid var(--dfq-red-l3);
+            border-bottom: 6px solid var(--dfq-red-l3);
+            background-color: var(--dfq-red-l5);
+        }
+
+        .animator-img {
+            display: inline-block;
+            width: min(200px, 100%);
+            overflow: hidden;
+            border-radius: 50%;
+            aspect-ratio: 1;
+            background-image: url("/hugues_drouin.png");
+            background-size: 400px;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: inset 0 0 2px var(--dfq-red-l1);
+        }
+
+        .animator-name {
+            vertical-align: middle;
+            display: inline-block;
+            text-align: left;
+            font-size: 1.5rem;
+            color: var(--dfq-red);
+        }
+
+        .animator-name div:nth-child(2) {
+            font-weight: bold;
+        }
+
+        .peek-items {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .peek-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        .peek-item .video-container {
+            height: 315px;
+            display: inline-block;
+            border-radius: 15px;
+            border: 6px solid var(--dfq-red-l3);
+            overflow: hidden;
+            box-sizing: content-box;
+        }
+
+        .video-container .video-iframe {
+            width: 560px;
+            height: 315px;
+        }
+
+        .audience-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .audience-item {
+            background: var(--dfq-red-l5);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--dfq-red-l3);
+            transition: all 0.3s ease;
+        }
+
+        .map-container {
+            background: var(--dfq-red-l5);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .directions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .direction-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--dfq-red-l3);
+        }
+
+        .notes-section {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border-left: 5px solid #f39c12;
+        }
+
+        .notes-section h3 {
+            color: #d68910;
+            margin-bottom: 1rem;
+        }
+
+        .notes-list {
+            list-style: none;
+        }
+
+        .notes-list li {
+            margin: 0.5rem 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .notes-list li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+        }
+
+        .contact-section {
+            background: var(--dfq-red);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-section a {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        ul.sponsor-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            gap: 2rem;
+        }
+
+        li.sponsor {
+            padding: 0;
+            margin: 0;
+        }
+
+        li.sponsor img {
+            max-width: 200px;
+            max-height: 100px;
+        }
+
+        li.sponsor.rounded img {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                background-position: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .nav-links li:not(:last-child) {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .video-container .video-iframe {
+                width: 336px;
+                height: 189px;
+            }
+
+            .peek-item .video-container {
+                height: 189px;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .video-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dfq-red-l1);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .video-link:hover {
+            color: var(--dfq-red);
+            transform: translateX(5px);
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-container-container">
+            <div class="logo-container">
+              <div class="logo"></div>
+            </div>
+          </div>
+          <nav>
+            <ul class="nav-links">
+              <li><a href="#programme"><span lang="en">Program</span><span lang="fr">Programme</span></a></li>
+              <li><a href="#public"><span lang="en">Target Audience</span><span lang="fr">Public cible</span></a></li>
+              <li><a href="#acces"><span lang="en">Access</span><span lang="fr">Accès</span></a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li lang="fr"><a href="/en">Anglais</a></li>
+              <li lang="en"><a href="/">French</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>DRONE EXPO CANADA</h1>
+          <!--
+          <p class="hero-subtitle"
+             style="background-color: rgba(0,0,0,0.7); border-radius: 10px; margin-top: 5rem; margin-bottom: 5rem">
+            L'événement a lieu malgré la pluie. On vous attend en grand nombre!
+            <br>
+            <span style="font-size: 0.75em">(mis à jour le 30 août)</span>
+          </p>
+          -->
+          <p lang="fr" class="hero-subtitle">
+            Le plus gros événement de drones au Canada
+            <br>
+            Un rendez-vous à ne pas manquer
+          </p>
+          <p lang="en" class="hero-subtitle">
+            The Largest Drone Event in Canada
+            <br>
+            A Must-Attend Gathering
+          </p>
+
+          <div class="event-details">
+            <div class="detail-card">
+              <i class="fas fa-calendar-alt"></i>
+              <h3>Date</h3>
+              <p lang="fr">29 août 2026<br>10h00 - 16h30</p>
+              <p lang="en">August 29, 2026<br>10:00 AM - 4:30 PM</p>
+            </div>
+            <div class="detail-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3 lang="fr">Lieu</h3>
+              <h3 lang="en">Location</h3>
+              <p lang="fr">Derrière le CÉGEP Beauce Appalaches<br>1055 116e Rue, Saint-Georges</p>
+              <p lang="en">Behind the CÉGEP Beauce Appalaches<br>1055 116th street, Saint-Georges</p>
+            </div>
+            <div class="detail-card">
+              <i class="fas fa-ticket-alt"></i>
+              <h3 lang="fr">Billets</h3>
+              <h3 lang="en">Tickets</h3>
+              <p>20.00$<br>
+                <small lang="fr">Enfants de 12 ans et moins: Gratuit lorsqu'accompagné d'un adulte</small>
+                <small lang="en">Children 12 years old and younger: Free when accompanied by an adult</small>
+              </p>
+            </div>
+            <div class="detail-card">
+              <i class="fas fa-car"></i>
+              <h3 lang="fr">Stationnements</h3>
+              <h3 lang="en">Parkings</h3>
+              <p lang="fr">Gratuit dans les endroits désignés</p>
+              <p lang="en">Free in designated areas</p>
+            </div>
+          </div>
+
+          <div class="cta-buttons">
+            <!--
+            <a href="https://app.hi.events/event/839/festival-drone-fan-quebec" class="btn btn-primary">
+              <i class="fas fa-shopping-cart"></i>
+              Acheter des billets
+            </a>
+            -->
+            <!--
+            <a href="/Stationnements%20PDF.pdf" target="_blank" class="btn btn-secondary">
+              <i class="fas fa-map"></i>
+              Stationnements (PDF)
+            </a>
+            -->
+            <!--
+            <a href="/Horaire%20de%20la%20journée%20Festival%20Drone%20Fan%20Québec.pdf" target="_blank"
+               class="btn btn-secondary">
+              <i class="fas fa-clock"></i>
+              <span lang="fr">Horaire (PDF)</span>
+              <span lang="en">Schedule (PDF)</span>
+            </a>
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="main-content">
+      <div class="container">
+        <section id="programme" class="section">
+          <h2 lang="fr" class="section-title">Au programme</h2>
+          <h2 lang="en" class="section-title">Program</h2>
+
+          <div class="program-grid">
+            <div class="program-card">
+              <h3><i class="fas fa-eye"></i> <span lang="fr">Démonstrations de drones</span><span
+                lang="en">Drone demonstrations</span></h3>
+              <p
+                lang="fr">Présentation de drones pour les loisirs, l’arpentage, la recherche de personnes perdues, l’agriculture, la cartographie, incendie et l’inspection. Les démonstrations seront assistées par un commentateur qui expliquera la mission et les avantages du drone présenté.</p>
+              <p
+                lang="en">Drone presentations for leisure, surveying, search and rescue, agriculture, mapping, firefighting, and inspection. Demonstrations will be assisted by a commentator who will explain the mission and benefits of each drone presented.</p>
+            </div>
+
+            <div class="program-card">
+              <h3><i class="fas fa-store"></i> <span lang="fr">Exposants</span><span lang="en">Exhibitors</span></h3>
+              <p
+                lang="fr">Les exposants représentent une source d’information inestimable et un moyen pour ceux-ci de se faire connaître. L’édition 2026 accueillera encore plus d’exposants de domaines variés. Ensemble, ils vous feront découvrir les nombreuses applications des drones pour le travail et pour les loisirs ainsi que les bénéfices qu’ils apportent.</p>
+              <p
+                lang="en">Exhibitors are an invaluable source of information and a way for them to make themselves known. The 2026 edition will welcome even more exhibitors from various fields. Together, they will introduce you to the many applications of drones for work and leisure as well as the benefits they provide.</p>
+            </div>
+
+            <div class="program-card">
+              <h3><i class="fas fa-microphone"></i> <span lang="fr">Conférences</span><span lang="en">Conferences</span>
+              </h3>
+              <p
+                lang="fr">Des conférences de 30 minutes seront présentées sous une grande tente de 20 x 40 fermée qui peut accommoder une centaine de personnes. Pour tout savoir sur les drones et leurs bénéfices, ne manquez pas ces conférences uniques.</p>
+              <p
+                lang="en">30-minute conferences will be presented under a large closed tent measuring 20 x 40 that can accommodate around one hundred people. To learn all about drones and their benefits, don't miss these unique conferences.</p>
+            </div>
+
+            <div class="program-card">
+              <h3><i class="fas fa-trophy"></i> <span lang="fr">Coupe Canada 2026</span><span
+                lang="en">Canada Cup 2026</span></h3>
+              <p lang="fr">La plus grande course de drones FPV au Canada dirigée par M. Ryan Walker</p>
+              <p lang="en">The largest FPV drone race in Canada led by Mr. Ryan Walker.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 3rem;">
+            <h3 lang="fr" class="subsection-title">Modèles de drones en démonstration</h3>
+            <h3 lang="en" class="subsection-title">Drone Models on Display</h3>
+            <div class="drone-models">
+              <!--
+              <div class="drone-model">
+                À venir
+                <div class="drone-model-img"
+                     style="background-image: url('/no drone.png')"></div>
+              </div>
+              -->
+              <div class="drone-model">
+                DJI Mini Pro 5
+                <div class="drone-model-img" style="background-image: url('/assets/DJI Mini Pro 5.png')"></div>
+              </div>
+              <!--
+              <div class="drone-model">
+                Autel EVO II Pro
+                <div class="drone-model-img" style="background-image: url('/Autel EVO II.png')"></div>
+              </div>
+              -->
+              <!--
+              <div class="drone-model">
+                DJI Mavic 3 Pro
+                <div class="drone-model-img" style="background-image: url('/DJI Mavic 3 Pro.jpg')"></div>
+              </div>
+              -->
+              <div class="drone-model">
+                DJI Matrice 4 T
+                <div class="drone-model-img" style="background-image: url('/DJI Matrice 4 T.webp')"></div>
+              </div>
+              <!--
+              <div class="drone-model">
+                DJI Inspire 2
+                <div class="drone-model-img" style="background-image: url('/DJI Inspire 2.png')"></div>
+              </div>
+              -->
+              <!--
+              <div class="drone-model">
+                DJI Mavic 3 Entreprise
+                <div class="drone-model-img" style="background-image: url('/DJI Mavic 3 enterprise.png')"></div>
+              </div>
+              -->
+              <!--
+              <div class="drone-model">
+                DJI Matrice 30T
+                <div class="drone-model-img" style="background-image: url('/DJI Matrice 30T.png')"></div>
+              </div>
+              -->
+              <!--
+              <div class="drone-model">
+                Volt Hercules 20
+                <div class="drone-model-img"
+                     style="background-image: url('/no drone.png')"></div>
+              </div>
+              -->
+              <!--
+              <div class="drone-model">
+                DJI Agras T25
+                <div class="drone-model-img" style="background-image: url('/DJI Agras T25.webp')"></div>
+              </div>
+              -->
+              <div class="drone-model">
+                DJI Agras T100
+                <div class="drone-model-img" style="background-image: url('/assets/DJI Agras T100.webp')"></div>
+              </div>
+              <div class="drone-model">
+                <span lang="fr">Autres modèles à venir</span>
+                <span lang="en">Other models to come</span>
+                <div class="drone-model-img"
+                     style="background-image: url('/no drone.png')"></div>
+              </div>
+            </div>
+          </div>
+
+
+          <div style="margin-top: 3rem;">
+            <h3 lang="fr" class="subsection-title">Conférences au programme</h3>
+            <h3 lang="en" class="subsection-title">Conferences on the Agenda</h3>
+            <div class="conferences">
+              <!--
+              <div class="conference" style="text-align: center">
+                <h4>À venir</h4>
+              </div>
+              -->
+              <div class="conference">
+                <h4 lang="fr">1. Règlementation et mesures de sécurité</h4>
+                <h4 lang="en">1. Regulation and Safety Measures (French)</h4>
+                <ul lang="fr" class="conference-points">
+                  <li>Nouveau cadre règlementaire de Transport Canada en 2026</li>
+                  <li>Calcul du VLOS</li>
+                  <li>Équipements souhaitables</li>
+                </ul>
+                <ul lang="en" class="conference-points">
+                  <li>New regulatory framework from Transport Canada in 2026</li>
+                  <li>Calculation of VLOS</li>
+                  <li>Desirable equipment</li>
+                </ul>
+                <p lang="fr" class="conference-presenter">Par Jean Lamoureux et la DPAC</p>
+                <p lang="en" class="conference-presenter">By Jean Lamoureux and the DPAC</p>
+                <i class="far fa-circle-question"></i>
+              </div>
+              <div class="conference">
+                <h4 lang="fr">2. Assurances - Comment prévenir l'inévitable</h4>
+                <h4 lang="en">2. Insurance - How to Prevent the Inevitable (French)</h4>
+                <i class="far fa-dollar"></i>
+              </div>
+              <div class="conference">
+                <h4 lang="fr">3. Utilisation de drones pour l’inspection</h4>
+                <h4 lang="en">3. Use of Drones for Inspection (French)</h4>
+                <i style="transform: none" class="fas fa-magnifying-glass"></i>
+              </div>
+              <div class="conference">
+                <h4 lang="fr">4. Les avantages des drones en agriculture et en acériculture</h4>
+                <h4 lang="en">4. The Advantages of Drones in Agriculture and Maple Syrup Production (French)</h4>
+                <p lang="fr" class="conference-presenter">Par XLKey</p>
+                <p lang="en" class="conference-presenter">By XLKey</p>
+                <i class="fas fa-tractor"></i>
+              </div>
+              <div class="conference">
+                <h4 lang="fr">5. Les erreurs communes des pilotes de drones</h4>
+                <h4 lang="en">5. Common Mistakes Made by Drone Pilots (French)</h4>
+                <p lang="fr" class="conference-presenter">Par Drones Outaouais</p>
+                <p lang="en" class="conference-presenter">By Drones Outaouais</p>
+                <i class="fas fa-triangle-exclamation"></i>
+              </div>
+              <div class="conference">
+                <h4
+                  lang="fr">6. Bénéfices des drones pour combattre les incendies et pour la recherche et le sauvetage</h4>
+                <h4 lang="en">6. Benefits of Drones for Fighting Fires and for Search and Rescue (French)</h4>
+                <p lang="fr" class="conference-presenter">Par Frédéric Morin</p>
+                <p lang="en" class="conference-presenter">By Frédéric Morin</p>
+                <i class="fas fa-fire-extinguisher"></i>
+              </div>
+              <div class="conference">
+                <h4 lang="fr">7. Les drones terrestres et leur utilisation pour le travail</h4>
+                <h4 lang="en">7. Ground Drones and Their Use for Work (French)</h4>
+                <p lang="fr" class="conference-presenter">Par Inspecvision et Tesselate Robotics</p>
+                <p lang="en" class="conference-presenter">By Inspecvision and Tesselate Robotics</p>
+                <i class="fas fa-toolbox"></i>
+              </div>
+              <div class="conference">
+                <h4 lang="fr">8. Utilisation des drones par les forces armées canadiennes</h4>
+                <h4 lang="en">8. Use of Drones by the Canadian Armed Forces (French)</h4>
+                <i class="fas fa-jet-fighter"></i>
+              </div>
+            </div>
+
+            <!--
+            <div class="conference-animator">
+              <div class="animator-img"></div>
+              <div class="animator-name">
+                <div>Animateur de la journée</div>
+                <div>Monsieur Hugues Drouin</div>
+              </div>
+            </div>
+            -->
+          </div>
+
+
+          <!--
+          <div style="margin-top: 3rem;">
+            <div class="peek-items">
+              <div class="peek-item">
+                <h3 class="subsection-title">Notre festival</h3>
+                <div class="video-container">
+                  <iframe class="video-iframe"
+                          src="https://www.youtube-nocookie.com/embed/rpnWPI9SK_M?si=GjltU2GdcyCDZj83"
+                          title="YouTube video player" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+
+              <div class="peek-item">
+                <h3 class="subsection-title" id="fpv-race">Exemple de course FPV</h3>
+                <div class="video-container">
+                  <iframe class="video-iframe"
+                          src="https://www.youtube-nocookie.com/embed/WiyzA_hJANQ?si=qa27IxmQ39Maluqu"
+                          title="YouTube video player" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+
+              <div class="peek-item">
+                <h3 class="subsection-title">Un drone sous-marin</h3>
+                <div class="video-container">
+                  <iframe class="video-iframe"
+                          src="https://www.youtube-nocookie.com/embed/E4jRosj1zVI?si=k-lC-u8cbRKagCvc"
+                          title="YouTube video player" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          -->
+        </section>
+
+        <section id="public" class="section">
+          <h2 lang="fr" class="section-title">À qui s'adresse notre festival?</h2>
+          <h2 lang="en" class="section-title">Who is our festival for?</h2>
+
+          <div class="audience-list">
+            <div lang="fr" class="audience-item">
+              <strong>Pilotes professionnels et amateurs</strong> de drones
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Professional and amateur</strong> drone pilots
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Curieux</strong> qui ont de l'intérêt sur le sujet des drones
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Curious individuals</strong> interested in the subject of drones
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Agriculteurs</strong> qui veulent voir comment les drones peuvent les aider
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Farmers</strong> who want to see how drones can help them
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Services d'urgence</strong> (pompiers, policiers) qui utilisent ou souhaitent utiliser des drones
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Emergency services</strong> (firefighters, police) that use or wish to use drones
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Propriétaires terrains</strong> qui voudraient faire cartographier un terrain
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Landowners</strong> who want to have a property mapped
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Préoccupés par la vie privée</strong> qui craignent de se faire filmer par un drone
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Privacy-conscious individuals</strong> who fear being filmed by a drone
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Inspecteurs</strong> de toits, d'infrastructures en hauteur ou de lieux difficiles d'accès
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Inspectors</strong> of roof, high infrastructure, or hard-to-reach location
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Néophytes</strong> qui ne connaissent pas la réglementation des drones de moins de 250g
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Novices</strong> who do not know the regulation for drones under 250g
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Futurs acheteurs</strong> qui pensent acheter un premier drone
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Future buyers</strong> considering purchasing their first drone
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Étudiants en formation</strong> de pilote de base, avancée ou spécialisée
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Students</strong> in basic, advanced, or specialized pilot training
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Amateurs de courses FPV</strong> passionnés de vitesse
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>FPV racing enthusiasts</strong> passionate about speed
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Créateurs de contenu</strong> qui souhaitent améliorer leurs prises de vues
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Content creators</strong> who want to improve their footage
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Représentants municipaux</strong> qui souhaitent encadrer l'utilisation de drones
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Municipal representatives</strong> who want to regulate drone use
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Jeunes</strong> qui recherchent un métier palpitant
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Young people</strong> looking for an exciting career
+            </div>
+            <div lang="fr" class="audience-item">
+              <strong>Pilotes d'avions et gestionnaires d'aéroport</strong> qui craignent les accidents
+            </div>
+            <div lang="en" class="audience-item">
+              <strong>Airplane pilots and airport managers</strong> concerned about accidents
+            </div>
+          </div>
+        </section>
+
+        <section id="acces" class="section">
+          <h2 lang="fr" class="section-title">Comment se rendre sur le site?</h2>
+          <h2 lang="en" class="section-title">How to get to the site?</h2>
+
+          <div class="map-container">
+            <h3 lang="fr"><i class="fas fa-map"></i> Localisation</h3>
+            <h3 lang="en"><i class="fas fa-map"></i> Location</h3>
+            <p lang="fr">Derrière le CÉGEP Beauce Appalaches<br>1055 116e Rue, Saint-Georges</p>
+            <p lang="en">Behind CÉGEP Beauce Appalaches<br>1055 116th Street, Saint-Georges</p>
+          </div>
+
+          <div class="directions">
+            <div class="direction-card">
+              <h3 lang="fr"><i class="fas fa-highway"></i> Par l'autoroute 73</h3>
+              <h3 lang="en"><i class="fas fa-highway"></i> Via Highway 73</h3>
+              <p
+                lang="fr">Lorsque vous arrivez au bout de l'autoroute, tournez à droite pour prendre la route 204 en direction du centre-ville. Continuez jusqu'au deuxième feu de circulation et tournez à gauche sur la 120e rue. Descendez jusqu'à la 19e avenue et tournez à droite. Roulez jusqu'à la 118e rue. À ce moment des indications pour les stationnements seront visibles.</p>
+              <p
+                lang="en">When you reach the end of the highway, turn right to take Route 204 towards the city center. Continue until the second traffic light and turn left onto 120th Street. Go down to 19th Avenue and turn right. Drive to 118th Street. At this point, signs for parking will be visible.</p>
+            </div>
+
+            <div class="direction-card">
+              <h3 lang="fr"><i class="fas fa-road"></i> Par le boulevard Lacroix</h3>
+              <h3 lang="en"><i class="fas fa-road"></i> Via Lacroix Boulevard</h3>
+              <p
+                lang="fr">Allez jusqu'à la 118e rue et montez jusqu'à la 19e avenue. À ce moment des indications pour les stationnements seront visibles.</p>
+              <p
+                lang="en">Go to 118th Street and head up to 19th Avenue. At this point, signs for parking will be visible.</p>
+            </div>
+
+            <div class="direction-card">
+              <h3 lang="fr"><i class="fas fa-bridge"></i> Par le côté ouest de la ville</h3>
+              <h3 lang="en"><i class="fas fa-bridge"></i> From the west side of the city</h3>
+              <p
+                lang="fr">Prendre le pont et continuer tout droit sur la 118e rue jusqu'à la 19e avenue. À ce moment des indications pour les stationnements seront visibles.</p>
+              <p
+                lang="en">Take the bridge and continue straight on 118th Street to 19th Avenue. At this point, signs for parking will be visible.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <div class="notes-section">
+            <h3 lang="fr"><i class="fas fa-exclamation-triangle"></i> Notes importantes</h3>
+            <h3 lang="en"><i class="fas fa-exclamation-triangle"></i> Important Notes</h3>
+            <ul lang="fr" class="notes-list">
+              <li>Aucun animal sur le site ne sera permis,</li>
+              <li>Aucune nourriture, alcool, breuvages sauf de l'eau ne seront acceptés à l'entrée du site,</li>
+              <li>Les enfants de 12 ans et moins doivent être accompagnés d'un adulte pour accéder au site,</li>
+              <li>Camion cantine (food truck) sur place.</li>
+            </ul>
+            <ul lang="en" class="notes-list">
+              <li>No animals will be allowed on the site,</li>
+              <li>No food, alcohol, or beverages except water will be accepted at the site entrance,</li>
+              <li>Children 12 and under must be accompanied by an adult to access the site,</li>
+              <li>Food truck on site.</li>
+            </ul>
+          </div>
+          <div class="contact-section">
+            <h2 lang="fr"><i class="fas fa-envelope"></i> Demande d'information</h2>
+            <h2 lang="en"><i class="fas fa-envelope"></i> Information Request</h2>
+            <p lang="fr">Pour toute question concernant l'événement</p>
+            <p lang="en">For any questions regarding the event</p>
+            <a href="mailto:info@expodronecanada.com">info@expodronecanada.com</a>
+          </div>
+        </section>
+
+        <!--
+        <section class="section" style="text-align: center; padding: 2rem 0;">
+          <h3 style="color: var(--dfq-red); margin-bottom: 1rem;">Collaborateurs et commanditaires</h3>
+
+          <ul class="sponsor-grid">
+            <li class="sponsor"
+                style="padding: 40px 70px; background-color: var(--dfq-red-l4); border-radius: 0.5rem; color: var(--dfq-red-l1)">
+              À venir
+            </li>
+        -->
+        <!--
+        <li class="sponsor">
+          <img src="/sponsor/saint_georges.jpg" alt="Ville de Saint-Georges">
+        </li>
+        <li class="sponsor">
+          <img src="/sponsor/ko_multimedia.png" alt="KO Multimédia">
+        </li>
+        <li class="sponsor">
+          <img src="/sponsor/ultima.png" alt="Ultima">
+        </li>
+        <li class="sponsor">
+          <img src="/sponsor/cauca.jpg" alt="CAUCA">
+        </li>
+        <li class="sponsor">
+          <img src="/sponsor/mrc_beauce_sartigan.png" alt="MRC Beauce Sartigan">
+        </li>
+        <li class="sponsor">
+          <img src="/sponsor/boccam.png" alt="Boccam">
+        </li>
+        <li class="sponsor rounded">
+          <img src="/sponsor/bourque_electrique.png" alt="Bourque Électrique">
+        </li>
+        <li class="sponsor">
+          <img src="/sponsor/cambi.png" alt="CAMBI">
+        </li>
+        <li class="sponsor">
+          <img src="/sponsor/lesva.png" alt="LESVA">
+        </li>
+        -->
+        <!--
+      </ul>
+    </section>
+    -->
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p lang="fr">&copy; Drone Expo Canada. Tous droits réservés.</p>
+        <p lang="en">&copy; Drone Expo Canada. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll("a[href^=\"#\"]").forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector("header");
+            if(window.scrollY > 100) {
+            } else {
+            }
+        });
+
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll(".program-card, .detail-card, .audience-item").forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(30px)";
+            card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(card);
+        });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELBE2LBZTX"></script>
+    <script> window.dataLayer = window.dataLayer || [];
+
+    function gtag() {dataLayer.push(arguments);}
+
+    gtag("js", new Date());
+    gtag("config", "G-ELBE2LBZTX");
+    </script>
+  </body>
+</html>

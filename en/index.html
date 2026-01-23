@@ -57,23 +57,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 0.25rem 0;
             flex-wrap: wrap;
             gap: 0 0.75rem;
         }
 
-        .logo-container-container {
-        }
-
-        .logo-container {
-        }
-
         .logo {
             position: relative;
-            width: 100px;
-            height: 60px;
-            background-image: url("/assets/dec_dark_logo.png");
-            background-size: 100px 100px;
+            width: 150px;
+            height: 80px;
+            background-image: url("/assets/dec_dark_logo_small.png");
+            background-size: 150px 150px;
             background-repeat: no-repeat;
             background-position: center center;
         }
@@ -126,10 +120,10 @@
         .hero {
             color: white;
             text-align: center;
-            padding: 6rem 0;
+            padding: 7rem 0;
             position: relative;
             overflow: hidden;
-            background: url("/Festival_Drone_header.jpg");
+            background: var(--dfq-red);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: right;
@@ -672,7 +666,6 @@
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <h1>DRONE EXPO CANADA</h1>
           <!--
           <p class="hero-subtitle"
              style="background-color: rgba(0,0,0,0.7); border-radius: 10px; margin-top: 5rem; margin-bottom: 5rem">

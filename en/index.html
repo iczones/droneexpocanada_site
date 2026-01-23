@@ -19,6 +19,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            --dec-white: #fefefe;
             --dfq-red: hsl(359, 62%, 39%);
             --dfq-red-l1: hsl(10, 72%, 49%);
             --dfq-red-l3: hsl(3, 82%, 63%);
@@ -43,8 +44,7 @@
 
         /* Header */
         header {
-            color: white;
-            background: var(--dfq-blue-d5);
+            background: var(--dec-white);
             backdrop-filter: blur(20px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             position: fixed;
@@ -63,78 +63,62 @@
         }
 
         .logo-container-container {
-            position: relative;
-            height: 0;
-            width: 0;
         }
 
         .logo-container {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            top: -35px;
-            left: 0;
-            position: absolute;
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
         }
 
-        .logo::after {
-            content: "";
-            width: 120%;
-            height: 120%;
-            position: absolute;
-            top: -15%;
-            left: -10%;
-            border-radius: 50%;
-            background: var(--dfq-blue-d5);
-            background-image: url("/assets/dec_white_logo.png");
+        .logo {
+            position: relative;
+            width: 100px;
+            height: 60px;
+            background-image: url("/assets/dec_dark_logo.png");
             background-size: 100px 100px;
             background-repeat: no-repeat;
             background-position: center center;
         }
 
-        .logo::before {
-            content: "";
-            width: 130%;
-            height: 130%;
-            position: absolute;
-            top: -20%;
-            left: -15%;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 1);
-        }
-
-        .logo {
-            position: relative;
-            aspect-ratio: 1;
-            width: 100px;
+        nav {
             margin: auto;
-            margin-top: 15px;
-        }
-
-        .logo::before {
-            content: "";
         }
 
         .nav-links {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            justify-items: center;
+            align-items: center;
             gap: 2rem;
             list-style: none;
         }
 
+        .nav-links li {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links li:nth-child(1) {
+            text-align: right;
+        }
+
+        .nav-links li:nth-child(2) {
+
+        }
+
+        .nav-links li:nth-child(3) {
+            text-align: left;
+        }
+
         .nav-links a {
             text-decoration: none;
-            color: white;
+            color: black;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--dfq-red-l3);
+            color: var(--dfq-red);
             transform: translateY(-2px);
         }
 
@@ -201,14 +185,13 @@
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             padding: 2rem;
-            border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .detail-card i {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #ffffff;
+            color: var(--dec-white);
         }
 
         .cta-buttons {
@@ -222,7 +205,6 @@
         .btn {
             padding: 1rem 2rem;
             border: none;
-            border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
@@ -261,7 +243,6 @@
         .main-content {
             background: white;
             margin: -50px 0 0 0;
-            border-radius: 30px 30px 0 0;
             position: relative;
             z-index: 3;
             box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
@@ -302,7 +283,6 @@
         .program-card {
             background: var(--dfq-red-l5);
             padding: 2rem;
-            border-radius: 20px;
             border-left: 5px solid var(--dfq-red-l3);
             transition: all 0.3s ease;
             position: relative;
@@ -327,7 +307,6 @@
             background: var(--dfq-red-l3);
             color: white;
             padding: 1rem;
-            border-radius: 15px;
             text-align: center;
             font-weight: 600;
             transition: transform 0.3s ease;
@@ -344,7 +323,6 @@
             background-position: center;
             background-color: white;
             background-repeat: no-repeat;
-            border-radius: 20px;
         }
 
 
@@ -360,7 +338,6 @@
             position: relative;
             background: white;
             padding: 1rem 1.5rem;
-            border-radius: 15px;
             border: 1px solid var(--dfq-red-l3);
             border-left: 6px solid var(--dfq-red-l3);
             transition: all 0.3s ease;
@@ -403,7 +380,6 @@
             gap: 1rem;
             justify-content: center;
             padding: 1rem;
-            border-radius: 10px;
             border-top: 6px solid var(--dfq-red-l3);
             border-bottom: 6px solid var(--dfq-red-l3);
             background-color: var(--dfq-red-l5);
@@ -413,7 +389,6 @@
             display: inline-block;
             width: min(200px, 100%);
             overflow: hidden;
-            border-radius: 50%;
             aspect-ratio: 1;
             background-image: url("/hugues_drouin.png");
             background-size: 400px;
@@ -450,7 +425,6 @@
         .peek-item .video-container {
             height: 315px;
             display: inline-block;
-            border-radius: 15px;
             border: 6px solid var(--dfq-red-l3);
             overflow: hidden;
             box-sizing: content-box;
@@ -471,7 +445,6 @@
         .audience-item {
             background: var(--dfq-red-l5);
             padding: 1.5rem;
-            border-radius: 15px;
             border-left: 4px solid var(--dfq-red-l3);
             transition: all 0.3s ease;
         }
@@ -479,7 +452,6 @@
         .map-container {
             background: var(--dfq-red-l5);
             padding: 2rem;
-            border-radius: 20px;
             margin: 2rem 0;
             text-align: center;
         }
@@ -494,7 +466,6 @@
         .direction-card {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border-top: 4px solid var(--dfq-red-l3);
         }
@@ -502,7 +473,6 @@
         .notes-section {
             background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
             padding: 2rem;
-            border-radius: 20px;
             margin: 2rem 0;
             border-left: 5px solid #f39c12;
         }
@@ -533,7 +503,6 @@
             color: white;
             text-align: center;
             padding: 4rem 2rem;
-            border-radius: 20px;
             margin: 2rem 0;
         }
 
@@ -574,7 +543,6 @@
         }
 
         li.sponsor.rounded img {
-            border-radius: 10px;
             overflow: hidden;
         }
 
@@ -604,7 +572,20 @@
                 font-size: 1.2rem;
             }
 
-            .nav-links li:not(:last-child) {
+            nav {
+                width: 100%;
+            }
+
+            .nav-links {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .nav-links li:first-child {
+                display: none;
+            }
+
+            .nav-links li:last-child a:not(.locale-switcher) {
                 display: none;
             }
 
@@ -624,6 +605,10 @@
 
             .peek-item .video-container {
                 height: 189px;
+            }
+
+            .program-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
         }
 
@@ -663,19 +648,21 @@
     <header>
       <div class="container">
         <div class="header-content">
-          <div class="logo-container-container">
-            <div class="logo-container">
-              <div class="logo"></div>
-            </div>
-          </div>
           <nav>
             <ul class="nav-links">
-              <li><a href="#programme"><span lang="en">Program</span><span lang="fr">Programme</span></a></li>
-              <li><a href="#public"><span lang="en">Target Audience</span><span lang="fr">Public cible</span></a></li>
-              <li><a href="#acces"><span lang="en">Access</span><span lang="fr">Accès</span></a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li lang="fr"><a href="/en">Anglais</a></li>
-              <li lang="en"><a href="/">French</a></li>
+              <li>
+                <a href="#programme"><span lang="en">Program</span><span lang="fr">Programme</span></a>
+                <a href="#public"><span lang="en">Target Audience</span><span lang="fr">Public cible</span></a>
+              </li>
+              <li>
+                <div class="logo"></div>
+              </li>
+              <li>
+                <a href="#acces"><span lang="en">Access</span><span lang="fr">Accès</span></a>
+                <a href="#contact">Contact</a>
+                <a class="locale-switcher" lang="fr" href="/en">Anglais</a>
+                <a class="locale-switcher" lang="en" href="/">French</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -723,7 +710,7 @@
               <i class="fas fa-ticket-alt"></i>
               <h3 lang="fr">Billets</h3>
               <h3 lang="en">Tickets</h3>
-              <p>20.00$<br>
+              <p>20.00$<sup>+tx</sup><br>
                 <small lang="fr">Enfants de 12 ans et moins: Gratuit lorsqu'accompagné d'un adulte</small>
                 <small lang="en">Children 12 years old and younger: Free when accompanied by an adult</small>
               </p>
@@ -938,6 +925,7 @@
                 <p lang="en" class="conference-presenter">By Frédéric Morin</p>
                 <i class="fas fa-fire-extinguisher"></i>
               </div>
+              <!--
               <div class="conference">
                 <h4 lang="fr">7. Les drones terrestres et leur utilisation pour le travail</h4>
                 <h4 lang="en">7. Ground Drones and Their Use for Work (French)</h4>
@@ -945,11 +933,14 @@
                 <p lang="en" class="conference-presenter">By Inspecvision and Tesselate Robotics</p>
                 <i class="fas fa-toolbox"></i>
               </div>
+              -->
+              <!--
               <div class="conference">
                 <h4 lang="fr">8. Utilisation des drones par les forces armées canadiennes</h4>
                 <h4 lang="en">8. Use of Drones by the Canadian Armed Forces (French)</h4>
                 <i class="fas fa-jet-fighter"></i>
               </div>
+              -->
             </div>
 
             <!--
@@ -1166,7 +1157,7 @@
             <h2 lang="en"><i class="fas fa-envelope"></i> Information Request</h2>
             <p lang="fr">Pour toute question concernant l'événement</p>
             <p lang="en">For any questions regarding the event</p>
-            <a href="mailto:info@expodronecanada.com">info@expodronecanada.com</a>
+            <a href="mailto:info@droneexpocanada.com">info@droneexpocanada.com</a>
           </div>
         </section>
 

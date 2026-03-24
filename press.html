@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:image" content="/assets/dec_red_background.png">
+    <title>Drone Expo Canada - Press/Presse</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <nav>
+            <ul class="nav-links">
+              <li>
+                <a href="./#programme"><span lang="en">Program</span><span lang="fr">Programme</span></a>
+                <a href="./#public"><span lang="en">Target Audience</span><span lang="fr">Public cible</span></a>
+              </li>
+              <li>
+                <a class="logo" href="."></a>
+              </li>
+              <li>
+                <a href="./#acces"><span lang="en">Access</span><span lang="fr">Accès</span></a>
+                <a href="./#contact">Contact</a>
+                <a class="locale-switcher" lang="fr" href="/en">English</a>
+                <a class="locale-switcher" lang="en" href="/">Français</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content no-hero">
+      <div class="container">
+        <section id="programme" class="section">
+          <div class="press-grid">
+            <div class="press-card">
+              <h3><span lang="fr">Une Coupe du monde de drones au Québec : les meilleurs pilotes FPV s’affrontent à
+Saint-Georges</span><span lang="en"></span></h3>
+              <p lang="fr">
+                Le Québec s’apprête à accueillir un événement d’envergure internationale alors que la Canada FPV 2026 – World Cup FAI F9U réunira les meilleurs pilotes de drones de course au monde dans une compétition spectaculaire présentée sur trois jours.
+              </p>
+              <p lang="en"></p>
+              <br>
+              <a href="/assets/press/Communiqué%20de%20presse%20Course%20Drones%20FPV.pdf"><span
+                lang="fr">En savoir plus (PDF)</span><span lang="en">Read more (PDF)</span></a>
+            </div>
+
+            <div class="press-card">
+              <h3><span lang="fr">Drone Expo Canada revient en force à Saint-Georges</span><span
+                lang="en"></span></h3>
+              <p lang="fr">
+                Le 29 août 2026, la deuxième édition de Drone Expo Canada transformera Saint-Georges en véritable hub des drones. Plus grand événement du genre au Canada, l’événement réunit entreprises, pilotes et passionnés pour une journée de démonstrations spectaculaires, conférences et réseautage de haut niveau.
+              </p>
+              <p lang="en"></p>
+              <br>
+              <a href="/assets/press/Communiqué%20de%20presse%20Drone%20Expo%20Canada.pdf"><span
+                lang="fr">En savoir plus (PDF)</span><span lang="en">Read more (PDF)</span></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p lang="fr">&copy; Drone Expo Canada. Tous droits réservés.</p>
+        <p lang="en">&copy; Drone Expo Canada. All rights reserved.</p>
+
+        <nav lang="fr">
+          <a href="/press.html">Communiqués de presse</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll("a[href^=\"#\"]").forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector("header");
+            if(window.scrollY > 100) {
+            } else {
+            }
+        });
+
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll(".program-card, .detail-card, .audience-item").forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(30px)";
+            card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(card);
+        });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELBE2LBZTX"></script>
+    <script> window.dataLayer = window.dataLayer || [];
+
+    function gtag() {dataLayer.push(arguments);}
+
+    gtag("js", new Date());
+    gtag("config", "G-ELBE2LBZTX");
+    </script>
+  </body>
+</html>

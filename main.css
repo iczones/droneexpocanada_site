@@ -110,6 +110,15 @@ nav {
     transform: translateY(-2px);
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
 /* Hero Section */
 .hero {
     color: white;
@@ -121,20 +130,43 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
+    height: 750px;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-20px) rotate(180deg);
-    }
+.hero .container {
+    height: 100%;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-video {
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.hero-video.visible {
+    opacity: 1;
+}
+
+.hero-video.hidden {
+    opacity: 0;
 }
 
 .hero h1 {
@@ -145,12 +177,14 @@ nav {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
     opacity: 0.95;
     animation: fadeInUp 1s ease-out 0.2s both;
     color: black;
     font-weight: bold;
+    filter: drop-shadow(0px 0px 2px #c2c2c2);
 }
 
 @keyframes fadeInUp {
@@ -172,16 +206,16 @@ nav {
 }
 
 .detail-card {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--dfq-red-l5);
     backdrop-filter: blur(4px);
     padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 5px solid var(--dfq-red-l3);
 }
 
 .detail-card i {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--dec-white);
+    color: var(--dfq-red-l1);
 }
 
 .cta-buttons {
@@ -596,6 +630,7 @@ footer nav a {
 
     .hero {
         background-position: center;
+        height: 600px;
     }
 
     .hero h1 {
@@ -603,7 +638,7 @@ footer nav a {
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     nav {

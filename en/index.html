@@ -34,6 +34,10 @@
     </header>
 
     <section class="hero">
+      <video id="hero-video" class="hero-video visible" playsinline muted autoplay>
+        <source src="/assets/header_video.mp4" type="video/mp4">
+      </video>
+
       <div class="container">
         <div class="hero-content">
           <!--
@@ -54,38 +58,6 @@
             <br>
             A Must-Attend Gathering
           </p>
-
-          <div class="event-details">
-            <div class="detail-card">
-              <i class="fas fa-calendar-alt"></i>
-              <h3>Date</h3>
-              <p lang="fr">29 août 2026<br>10h00 - 16h30</p>
-              <p lang="en">August 29, 2026<br>10:00 AM - 4:30 PM</p>
-            </div>
-            <div class="detail-card">
-              <i class="fas fa-map-marker-alt"></i>
-              <h3 lang="fr">Lieu</h3>
-              <h3 lang="en">Location</h3>
-              <p lang="fr">Derrière le CÉGEP Beauce Appalaches<br>1055 116e Rue, Saint-Georges</p>
-              <p lang="en">Behind the CÉGEP Beauce Appalaches<br>1055 116th street, Saint-Georges</p>
-            </div>
-            <div class="detail-card">
-              <i class="fas fa-ticket-alt"></i>
-              <h3 lang="fr">Billets</h3>
-              <h3 lang="en">Tickets</h3>
-              <p>20.00$<sup>+tx</sup><br>
-                <small lang="fr">Enfants de 12 ans et moins: Gratuit lorsqu'accompagné d'un adulte</small>
-                <small lang="en">Children 12 years old and younger: Free when accompanied by an adult</small>
-              </p>
-            </div>
-            <div class="detail-card">
-              <i class="fas fa-car"></i>
-              <h3 lang="fr">Stationnements</h3>
-              <h3 lang="en">Parkings</h3>
-              <p lang="fr">Gratuit dans les endroits désignés</p>
-              <p lang="en">Free in designated areas</p>
-            </div>
-          </div>
 
           <div class="cta-buttons">
             <a href="https://app.hi.events/event/3455/drone-expo-canada-2026" class="btn btn-primary">
@@ -108,11 +80,47 @@
             </a>
             -->
           </div>
+
         </div>
       </div>
     </section>
 
     <div class="main-content">
+      <div class="container">
+        <div class="event-details">
+          <div class="detail-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Date</h3>
+            <p lang="fr">29 août 2026<br>10h00 - 16h30</p>
+            <p lang="en">August 29, 2026<br>10:00 AM - 4:30 PM</p>
+          </div>
+          <div class="detail-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3 lang="fr">Lieu</h3>
+            <h3 lang="en">Location</h3>
+            <p lang="fr">Derrière le CÉGEP Beauce Appalaches<br>1055 116e Rue, Saint-Georges</p>
+            <p lang="en">Behind the CÉGEP Beauce Appalaches<br>1055 116th street, Saint-Georges</p>
+          </div>
+          <div class="detail-card">
+            <i class="fas fa-ticket-alt"></i>
+            <h3 lang="fr">Billets</h3>
+            <h3 lang="en">Tickets</h3>
+            <p>20.00$<sup>+tx</sup><br>
+              <small lang="fr">Enfants de 12 ans et moins: Gratuit lorsqu'accompagné d'un adulte</small>
+              <small lang="en">Children 12 years old and younger: Free when accompanied by an adult</small>
+            </p>
+          </div>
+          <div class="detail-card">
+            <i class="fas fa-car"></i>
+            <h3 lang="fr">Stationnements</h3>
+            <h3 lang="en">Parkings</h3>
+            <p lang="fr">Gratuit dans les endroits désignés</p>
+            <p lang="en">Free in designated areas</p>
+          </div>
+        </div>
+
+      </div>
+
       <div class="container">
         <section id="programme" class="section">
           <h2 lang="fr" class="section-title">Au programme</h2>
@@ -536,6 +544,20 @@
     </footer>
 
     <script>
+        const heroVideo = document.getElementById("hero-video");
+        const heroImage = document.getElementById("hero-container");
+
+        heroVideo.addEventListener("ended", function() {
+            heroVideo.classList.add("hidden");
+            heroImage.classList.add("visible");
+        });
+
+        // Fallback for autoplay issues
+        heroVideo.addEventListener("play", function() {
+            heroImage.classList.remove("visible");
+            heroVideo.classList.remove("hidden");
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll("a[href^=\"#\"]").forEach(anchor => {
             anchor.addEventListener("click", function(e) {

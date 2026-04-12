@@ -545,16 +545,13 @@
 
     <script>
         const heroVideo = document.getElementById("hero-video");
-        const heroImage = document.getElementById("hero-container");
 
         heroVideo.addEventListener("ended", function() {
             heroVideo.classList.add("hidden");
-            heroImage.classList.add("visible");
         });
 
         // Fallback for autoplay issues
         heroVideo.addEventListener("play", function() {
-            heroImage.classList.remove("visible");
             heroVideo.classList.remove("hidden");
         });
 

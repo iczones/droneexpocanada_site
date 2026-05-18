@@ -178,6 +178,11 @@
                 <div class="drone-model-img" style="background-image: url('/assets/DJI Agras T100.webp')"></div>
               </div>
               <div class="drone-model">
+                <span lang="fr">Drone Nettoyeur</span>
+                <span lang="en">Washer Drone</span>
+                <div class="drone-model-img" style="background-image: url('/assets/drone_nettoyeur.png')"></div>
+              </div>
+              <div class="drone-model">
                 <span lang="fr">Autres modèles à venir</span>
                 <span lang="en">Other models to come</span>
                 <div class="drone-model-img"
@@ -213,7 +218,9 @@
                   <p lang="fr" class="conference-presenter">Par Jean Lamoureux et la DPAC</p>
                   <p lang="en" class="conference-presenter">By Jean Lamoureux and the DPAC</p>
                 </div>
-                <i class="far fa-circle-question"></i>
+                <div class="conference-presenter-picture">
+                  <img src="/assets/conference/jean_lamoureux.jpg" alt="Jean Lamoureux">
+                </div>
               </div>
               <div class="conference">
                 <div>
@@ -236,7 +243,9 @@
                   <p lang="fr" class="conference-presenter">Par XLKey</p>
                   <p lang="en" class="conference-presenter">By XLKey</p>
                 </div>
-                <i class="fas fa-tractor"></i>
+                <div class="conference-presenter-picture">
+                  <img src="/assets/conference/Victor_XLKey.jpeg" alt="Victor">
+                </div>
               </div>
               <div class="conference">
                 <div>
@@ -245,7 +254,9 @@
                   <p lang="fr" class="conference-presenter">Par Drones Outaouais</p>
                   <p lang="en" class="conference-presenter">By Drones Outaouais</p>
                 </div>
-                <i class="fas fa-triangle-exclamation"></i>
+                <div class="conference-presenter-picture">
+                  <img src="/assets/conference/jean_lamoureux.jpg" alt="Jean Lamoureux">
+                </div>
               </div>
               <div class="conference">
                 <div>
@@ -256,8 +267,7 @@
                   <p lang="en" class="conference-presenter">By Frédéric Morin</p>
                 </div>
                 <div class="conference-presenter-picture">
-                  <img src="/assets/conference/frederic_morin.jpg"
-                       alt="Frédéric Morin">
+                  <img src="/assets/conference/frederic_morin.jpg" alt="Frédéric Morin">
                 </div>
               </div>
               <!--
@@ -540,6 +550,9 @@
             <li class="sponsor">
               <img src="/assets/sponsor/ultima.png" alt="ULTIMA">
             </li>
+            <li class="sponsor">
+              <img src="/assets/sponsor/boccam.png" alt="Boccam">
+            </li>
           </ul>
         </section>
       </div>
@@ -582,14 +595,6 @@
             });
         });
 
-        // Add scroll effect to header
-        window.addEventListener("scroll", function() {
-            const header = document.querySelector("header");
-            if(window.scrollY > 100) {
-            } else {
-            }
-        });
-
         // Animate cards on scroll
         const observerOptions = {
             threshold: 0.1,
@@ -621,5 +626,36 @@
     gtag("js", new Date());
     gtag("config", "G-ELBE2LBZTX");
     </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f, b, e, v, n, t, s) {
+            if(f.fbq) {
+                return;
+            }
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+            };
+            if(!f._fbq) {
+                f._fbq = n;
+            }
+            n.push = n;
+            n.loaded = !0;
+            n.version = "2.0";
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s);
+        }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+        fbq("init", "1461013865706791");
+        fbq("track", "PageView");
+    </script>
+    <noscript>
+      <img height="1" width="1" src="https://www.facebook.com/tr?id=1461013865706791&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
   </body>
 </html>

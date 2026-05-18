@@ -598,6 +598,7 @@ footer nav {
 }
 
 footer nav a {
+    display: block;
     text-decoration: underline;
     color: white;
     font-weight: 500;

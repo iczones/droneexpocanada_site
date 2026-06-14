@@ -19,12 +19,13 @@ class CookieConsent extends HTMLElement
                     right: 0;
                     background: white;
                     padding: 20px;
-                    border-top: 1px solid var(--dfq-red);
+                    border-top: 1px solid var(--dfq-red, hsl(359, 62%, 39%));
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     gap: 20px;
                     z-index: 1000;
+                    color: #333333;
                 }
 
                 #cookie-banner.hidden {
@@ -48,12 +49,12 @@ class CookieConsent extends HTMLElement
                 }
 
                 #cookie-allow {
-                    background: var(--dfq-red-l5);
-                    color: var(--dfq-red-l1);
+                    background: var(--dfq-red-l5, hsl(0, 90%, 98%));
+                    color: var(--dfq-red-l1, hsl(10, 72%, 49%));
                 }
 
                 #cookie-refuse {
-                    color: var(--dfq-red);
+                    color: var(--dfq-red, hsl(359, 62%, 39%));
                     background: transparent;
                 }
                 
@@ -66,12 +67,12 @@ class CookieConsent extends HTMLElement
 
             <div id="cookie-banner">
                 <div id="cookie-text">
-                    <p lang="fr">Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site. En cliquant sur « Accepter tout », vous consentez à l'utilisation de ces cookies.</p>
-                    <p lang="en">We use cookies to enhance your experience and analyze site traffic. By clicking "Allow all," you consent to the use of those cookies.</p>
+                    <p data-lang="fr" lang="fr">Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site. En cliquant sur « Accepter tout », vous consentez à l'utilisation de ces cookies.</p>
+                    <p data-lang="en" lang="en">We use cookies to enhance your experience and analyze site traffic. By clicking "Allow all," you consent to the use of those cookies.</p>
                 </div>
                 <div id="cookie-buttons">
-                    <button id="cookie-refuse"><span lang="en">Refuse</span><span lang="fr">Refuser</span></button>
-                    <button id="cookie-allow"><span lang="en">Allow all</span><span lang="fr">Accepter tout</span></button>
+                    <button id="cookie-refuse"><span data-lang="en" lang="en">Refuse</span><span data-lang="fr" lang="fr">Refuser</span></button>
+                    <button id="cookie-allow"><span data-lang="en" lang="en">Allow all</span><span data-lang="fr" lang="fr">Accepter tout</span></button>
                 </div>
             </div>
         `;

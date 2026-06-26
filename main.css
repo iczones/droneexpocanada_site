@@ -300,6 +300,7 @@ nav {
 
 .subsection-title {
     text-align: center;
+    margin-top: 1rem;
     margin-bottom: 2rem;
     color: var(--dfq-red);
 }
@@ -742,4 +743,13 @@ footer nav a {
 .video-link:hover {
     color: var(--dfq-red);
     transform: translateX(5px);
+}
+
+.fpv-race-image {
+    width: 100%;
+    border-top: 5px solid var(--dfq-red-l3);
+}
+
+.fpv-race-image img {
+    max-width: 100%;
 }
